@@ -23,7 +23,7 @@ var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
   originWhitelist: originWhitelist,
-  requireHeader: ['origin', 'x-requested-with'],
+  requireHeader: [],
   checkRateLimit: checkRateLimit,
   removeHeaders: [
     'cookie',
@@ -39,7 +39,7 @@ cors_proxy.createServer({
     // 'x-forwarded-proto',
     // 'x-forwarded-port',
   ],
-  redirectSameOrigin: true,
+  redirectSameOrigin: false,
   httpProxyOptions: {
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
     xfwd: false,
